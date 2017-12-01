@@ -8,24 +8,47 @@ def create_model(data_shape):
 
         model.add( Reshape(data_shape, input_shape=data_shape[0:2]) )
 
-        model.add( Conv2D(filters=28, kernel_size=(3,3)) )
+####### CONV ##################################################################
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=28, kernel_size=(3,3)) )
-        model.add( Activation('relu') )
-
-        model.add( MaxPooling2D(pool_size=(2,2)) )
-        model.add( Dropout(0.25) )
-
-        model.add( Conv2D(filters=14, kernel_size=(3,3)))
-        model.add( Activation('relu') )
-
-        model.add( Conv2D(filters=14, kernel_size=(3,3)))
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
         model.add( Activation('relu') )
 
         model.add( MaxPooling2D(pool_size=(2,2)) )
         model.add( Dropout(0.25) )
 
+####### CONV ##################################################################
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( MaxPooling2D(pool_size=(2,2)) )
+        model.add( Dropout(0.25) )
+
+####### CONV ##################################################################
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( MaxPooling2D(pool_size=(2,2)) )
+        model.add( Dropout(0.25) )
+
+####### CONV ##################################################################
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( MaxPooling2D(pool_size=(2,2)) )
+        model.add( Dropout(0.25) )
+
+####### DENSE #################################################################
         model.add( Flatten() )
 
         model.add( Dense(126) )
