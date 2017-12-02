@@ -3,6 +3,7 @@ from keras.optimizers import SGD
 from keras.utils import to_categorical
 
 import create_model as cm
+import read_data as rd
 
 
 
@@ -25,7 +26,9 @@ model.compile(
 
 ## Training
 
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
+# (x_train, y_train), (x_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = rd.read_data("/data")
+
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
