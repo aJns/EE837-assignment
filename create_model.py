@@ -9,52 +9,60 @@ def create_model(data_shape):
         model.add( Reshape(data_shape, input_shape=data_shape[0:2]) )
 
 ####### CONV ##################################################################
-        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        filter_count = 64
+
+        model.add( Conv2D(filters=filter_count, kernel_size=(3,3), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=20, kernel_size=(2,2), padding='same'))
+        model.add( Conv2D(filters=filter_count, kernel_size=(2,2), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=20, kernel_size=(1,1), padding='same'))
-        model.add( Activation('relu') )
-
-        model.add( MaxPooling2D(pool_size=(2,2)) )
-        model.add( Dropout(0.25) )
-
-####### CONV ##################################################################
-        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
-        model.add( Activation('relu') )
-
-        model.add( Conv2D(filters=20, kernel_size=(2,2), padding='same'))
-        model.add( Activation('relu') )
-
-        model.add( Conv2D(filters=20, kernel_size=(1,1), padding='same'))
+        model.add( Conv2D(filters=filter_count, kernel_size=(1,1), padding='same'))
         model.add( Activation('relu') )
 
         model.add( MaxPooling2D(pool_size=(2,2)) )
         model.add( Dropout(0.25) )
 
 ####### CONV ##################################################################
-        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        filter_count = 128
+
+        model.add( Conv2D(filters=filter_count, kernel_size=(3,3), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=20, kernel_size=(2,2), padding='same'))
+        model.add( Conv2D(filters=filter_count, kernel_size=(2,2), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=20, kernel_size=(1,1), padding='same'))
+        model.add( Conv2D(filters=filter_count, kernel_size=(1,1), padding='same'))
         model.add( Activation('relu') )
 
         model.add( MaxPooling2D(pool_size=(2,2)) )
         model.add( Dropout(0.25) )
 
 ####### CONV ##################################################################
-        model.add( Conv2D(filters=20, kernel_size=(3,3), padding='same'))
+        filter_count = 256
+
+        model.add( Conv2D(filters=filter_count, kernel_size=(3,3), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=20, kernel_size=(2,2), padding='same'))
+        model.add( Conv2D(filters=filter_count, kernel_size=(2,2), padding='same'))
         model.add( Activation('relu') )
 
-        model.add( Conv2D(filters=20, kernel_size=(1,1), padding='same'))
+        model.add( Conv2D(filters=filter_count, kernel_size=(1,1), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( MaxPooling2D(pool_size=(2,2)) )
+        model.add( Dropout(0.25) )
+
+####### CONV ##################################################################
+        filter_count = 512
+
+        model.add( Conv2D(filters=filter_count, kernel_size=(3,3), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( Conv2D(filters=filter_count, kernel_size=(2,2), padding='same'))
+        model.add( Activation('relu') )
+
+        model.add( Conv2D(filters=filter_count, kernel_size=(1,1), padding='same'))
         model.add( Activation('relu') )
 
         model.add( MaxPooling2D(pool_size=(2,2)) )
