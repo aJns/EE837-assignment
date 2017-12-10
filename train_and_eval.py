@@ -26,8 +26,11 @@ model.compile(
 
 ## Training
 
-# (x_train, y_train), (x_test, y_test) = mnist.load_data()
-(x_train, y_train), (x_test, y_test) = rd.read_data("/data")
+try:
+        (x_train, y_train), (x_test, y_test) = rd.read_data("/data")
+except IOError:
+        print("Couldn't open the dataset in /data, loading keras dataset")
+        (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
