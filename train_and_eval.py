@@ -28,9 +28,11 @@ model.compile(
 
 try:
         (x_train, y_train), (x_test, y_test) = rd.read_data("/data")
+        using_floydhub = True
 except IOError:
         print("Couldn't open the dataset in /data, loading keras dataset")
         (x_train, y_train), (x_test, y_test) = mnist.load_data()
+        using_floydhub = False
 
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
@@ -42,5 +44,16 @@ model.fit(x_train, y_train,
 ## Evaluation
 score = model.evaluate(x_test, y_test, batch_size=128)
 print("\n", "Model accuracy: ", score[1], "\n")
+
+
+## save model
+if using_floydhub:
+        output_dir = '/output/'
+else:
+        output_dir = './output/'
+        if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+
+model.save(output_dir+'nikulaj_model.hdf5')
 
 
