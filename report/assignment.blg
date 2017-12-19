@@ -1,0 +1,9 @@
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'assignment.blg'
+[28] biber:313> INFO - === ti joulu 19, 2017, 19:42:38
+[50] Biber.pm:371> INFO - Reading 'assignment.bcf'
+[111] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[117] Utils.pm:169> WARN - The file 'assignment.bcf' does not contain any citations!
+[128] bbl.pm:617> INFO - Writing 'assignment.bbl' with encoding 'UTF-8'
+[128] bbl.pm:720> INFO - Output to assignment.bbl
+[128] Biber.pm:110> INFO - WARNINGS: 1

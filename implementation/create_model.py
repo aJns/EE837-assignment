@@ -1,5 +1,6 @@
 from keras.models import Sequential
 from keras.layers import Dense, Activation, MaxPooling2D, Conv2D, Dropout, Flatten, Reshape
+from keras.utils import plot_model
 
 
 def create_model(data_shape):
@@ -85,3 +86,7 @@ def create_model(data_shape):
 if __name__ == "__main__":
         model = create_model( (28, 28, 1) )
         model.summary()
+        try:
+                plot_model(model, to_file='./output/model.png')
+        except:
+                pass
